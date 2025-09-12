@@ -6,9 +6,9 @@ files:
 file_exists_behavior: OVERWRITE
 BeforeInstall:
   - location: /before_script.sh
-    timeout: 300
+    timeout: 50
     runas: root
 ApplicationStop:
   - location: /after_script.sh
-    timeout: 300
+    timeout: 50
     runas: root
