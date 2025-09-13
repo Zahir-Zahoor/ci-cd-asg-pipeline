@@ -1,34 +1,37 @@
 <html>
 <head>
 	<script>
-		//function that display value
+		// function that displays value
 		function dis(val) {
 			document.getElementById("result").value += val
 		}
-		
-		//function that evaluates the digit and return result
+
+		// function that evaluates the expression
 		function solve() {
 			let x = document.getElementById("result").value
-			let y = eval(x)
-			document.getElementById("result").value = y
+			try {
+				let y = eval(x)
+				document.getElementById("result").value = y
+			} catch {
+				document.getElementById("result").value = "Error"
+			}
 		}
-		
-		//function that clear the display
+
+		// function that clears the display
 		function clr() {
 			document.getElementById("result").value = ""
 		}
 	</script>
 
-	<!-- Styling -->
 	<style>
 		body {
 			font-family: Arial, sans-serif;
-			background-color: #f9f9f9;
+			background-color: #f4f4f4;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
-			height: 100vh;
+			min-height: 100vh;
 		}
 		.header {
 			font-size: 28px;
@@ -39,42 +42,25 @@
 			border: 3px solid black;
 			padding: 10px;
 			background-color: #e6f0ff;
+			width: 80%;
 		}
 		.title {
+			font-size: 22px;
+			font-weight: bold;
+			color: green;
 			margin-bottom: 20px;
 			text-align: center;
-			width: 350px;
-			color: green;
-			font-size: 24px;
-			font-weight: bold;
-			border: solid black 3px;
-			padding: 5px;
+		}
+		.calculator {
+			border: 3px solid black;
+			background: white;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
 		}
 		table {
-			border: 3px solid black;
-			background: #fff;
-		}
-		input[type="button"] {
-			background-color: green;
-			color: white;
-			border: solid black 2px;
 			width: 100%;
-			height: 80px;
-			font-size: 24px;
-			cursor: pointer;
+			border-collapse: collapse;
 		}
-		input[type="text"] {
-			background-color: white;
-			border: solid black 2px;
-			width: 100%;
-			height: 80px;
-			font-size: 28px;
-			text-align: right;
-			padding-right: 10px;
-		}
-	</style>
-</head>
-
-<body>
-	<div class="header">HII THIS IS ME 'ZAHIR' SHOWING YOU WORLD'S BEST CALCULATOR</div>
-	<div class="title">Calculator v4 - Big Size</div>
+		td {
+			padding: 5px;
