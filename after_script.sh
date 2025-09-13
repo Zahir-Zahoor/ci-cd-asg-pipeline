@@ -1,4 +1,4 @@
 #!/bin/bash
-echo "Running AfterInstall script..."
+echo "Restarting Nginx..."
 systemctl restart nginx
 
